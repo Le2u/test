@@ -1,0 +1,42 @@
+//
+//  main.c
+//  2
+//
+//  Created by lijiacheng on 2017/3/10.
+//  Copyright © 2017年 lijiacheng. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    int hour , minute , a;
+    
+    scanf("%d",&a );
+    
+    hour = a / 100 ;
+    minute = a % 100 ;
+    
+    if (hour <= 23 && minute <= 59) {
+        //小时大于8的情况
+        if ( hour > 8) {
+            hour -= 8 ;
+            if (minute <= 9) {
+                printf("%d0%d",hour,minute);
+            }else{
+                printf("%d%d",hour,minute);
+            }
+        }else if( hour == 8){
+                printf("%d",minute);
+        }else{
+            hour += 16 ;
+            if (minute <= 9) {
+                printf("%d0%d",hour,minute);
+            }else{
+                printf("%d%d",hour,minute);
+            }
+        }
+    }
+    
+    return 0;
+}
