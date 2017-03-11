@@ -1,0 +1,60 @@
+//
+//  main.c
+//  4
+//
+//  Created by lijiacheng on 2017/3/10.
+//  Copyright © 2017年 lijiacheng. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    
+    int number ;
+    int j = 2;
+//    int i ;
+//    int isPrime = 1;
+    
+    scanf("%d",&number);
+/*
+    //判断是否为素数
+    if ( number >= 2 && number <= 100000 ) {
+        for (i = 2 ; i < number ; i++ ) {
+            if ( number % i == 0) {
+                isPrime = 0 ;
+                break;
+            }
+        }
+        
+        if (isPrime == 1) {
+            printf("n=%d",number);
+        }else{
+            printf("n=");
+            for (j = 2; j <= number; j++ ) {
+            while (number % j == 0) {
+                printf("%d",j);
+                number = number / j ;
+                if ( number > j ) {
+                    printf("x");
+                }
+                //printf("%d %d\n",number , j );
+                }
+            }
+        }
+    }
+*/
+    if ( 2 <= number && number <= 100000) {
+        printf("n=");
+        for (j = 2; j <= number; j++ ) {
+            while (number % j == 0) {
+                printf("%d",j);
+                number = number / j ;
+                if ( number > j ) {
+                    printf("x");
+                }
+                //printf("%d %d\n",number , j );
+            }
+        }
+    }
+    return 0;
+}
