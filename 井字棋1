@@ -1,0 +1,83 @@
+//
+//  main.c
+//  test1
+//
+//  Created by lijiacheng on 2017/3/18.
+//  Copyright © 2017年 lijiacheng. All rights reserved.
+//
+
+#include <stdio.h>
+int main()
+{
+    int a[3][3];
+    int i,j,k;
+    int x,o;
+    int u=0,v=0;
+    int p=0,q=0;
+    int result=-1;
+    printf("输入3*3矩阵：");
+    for(i=0; i<3; i++)
+    {
+        for(j=0; j<3; j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("矩阵为:\n");
+    for(i=0; i<3; i++)
+    {
+        for(j=0; j<3; j++)
+        {
+            printf("%d\t",a[i][j]);
+        }
+        printf("\n");
+    }
+    for(i=0; i<3&&result==-1; i++)
+    {
+        x=o=0;
+        for(j=0; j<3&&result==-1; j++)
+        {
+            for(k=0; k<3&&result==-1; k++)
+            {
+                int x=o=0;
+                
+                if(a[k][j]==1)
+                    x++;
+                else
+                    o++;
+            }
+            if(o==3)
+                result=0;
+            else if(x==3)
+                result=1;
+            if(a[i][j]==1)
+                x++;
+            else
+                o++;
+            
+        }
+        if(o==3)
+            result=0;
+        else if(x==3)
+            result=1;
+        if(a[i][i]==1)
+            u++;
+        else
+            v++;
+        if(v==3)
+            result=0;
+        else if(u==3)
+            result=1;
+        if(a[i][2-i]==1)
+            p++;
+        else if(a[i][2-i]==0)
+            q++;
+        if(q==3)
+            result=0;
+        else if(p==3)
+            result=1;
+    }
+    printf("u=%d\tv=%d\n",u,v);
+    printf("p=%d\tq=%d\n",p,q);
+    printf("最后结果是\t%d",result);
+}
